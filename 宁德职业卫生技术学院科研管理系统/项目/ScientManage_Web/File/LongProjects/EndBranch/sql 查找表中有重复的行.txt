@@ -1,3 +1,0 @@
-select name,project ,count(*) as ÖØ¸´´ÎÊý
-from students group by name,project 
-having count(1) >= 2
