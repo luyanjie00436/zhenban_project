@@ -1,0 +1,7 @@
+
+//jq 设置Iframe 高度自适应
+$(document).ready(function(){
+var _h=div_main.offsetHeight+30;              //div_main 为子页面中form中的div的id 
+var _ifm=parent.document.getElementById("ifm_1"); //ifm 为default 页面中iframe 控件id
+$(_ifm).attr("height",_h);
+});
