@@ -49,6 +49,13 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>D:\360极速浏览器下载\NPOI\NPOI\X86\1.2.4.0\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -427,7 +434,6 @@
     <Content Include="LongProjectsStandExamineDetailed.aspx" />
     <Content Include="LongProjectsStandExamineManage.aspx" />
     <Content Include="LongProjectsStandManage.aspx" />
-    <Content Include="master.css" />
     <Content Include="MyCompetitionManage.aspx" />
     <Content Include="MyKJProjectStatusManage.aspx" />
     <Content Include="MyOtherResultsManage.aspx" />
@@ -555,6 +561,25 @@
     <Content Include="WorkLoadProjectsManage.aspx" />
     <Content Include="WorkLoadProjectsPartnerManage.aspx" />
     <Content Include="WorkLoadProjectsProcess.aspx" />
+    <Content Include="File\Template\CapitalAdjustNatural.dot" />
+    <Content Include="File\Template\CapitalAdjustSociology.dot" />
+    <Content Include="File\Template\CapitalPlanNatural.dot" />
+    <Content Include="File\Template\CapitalPlanSociology.dot" />
+    <Content Include="File\Template\FinalCapital.xls" />
+    <Content Include="File\Template\LongProjectsDeclareNatural.dot" />
+    <Content Include="File\Template\LongProjectsDeclareSolociogy.dot" />
+    <Content Include="File\Template\Activity.xls" />
+    <Content Include="File\Template\Assciation.dot" />
+    <Content Include="File\Template\Lcture.xls" />
+    <Content Include="File\Template\Competition.xls" />
+    <Content Include="File\Template\Guidance.xls" />
+    <Content Include="File\Template\Harvest.xls" />
+    <Content Include="File\Template\OtherResults.xls" />
+    <Content Include="File\Template\Paper.xls" />
+    <Content Include="File\Template\Patent.xls" />
+    <Content Include="File\Template\Teaching.xls" />
+    <Content Include="File\Template\Winning.xls" />
+    <Content Include="File\Template\WorkLoadProjects.xls" />
     <None Include="js\jQuery.1.2.6.zh-cn-vsdoc.js" />
     <Content Include="js\jquery.addpic.js" />
     <Content Include="js\jquery.form.js" />
@@ -2992,6 +3017,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="InstructionsForUse\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScientManage_Data\ningdeScientManage_Data.csproj">
