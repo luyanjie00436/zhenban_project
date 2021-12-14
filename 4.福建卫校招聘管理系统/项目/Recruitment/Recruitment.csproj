@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02C6581B-A667-4470-9EAD-0B262898D738}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Recruitment</RootNamespace>
+    <AssemblyName>Recruitment</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.1.2.4\lib\net40\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.1.2.4\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplyEvent.aspx" />
+    <Content Include="App_Readme\NPOI\Ionic_Utils_Zip_license.txt" />
+    <Content Include="App_Readme\NPOI\License.txt" />
+    <Content Include="App_Readme\NPOI\Read Me.txt" />
+    <Content Include="App_Readme\NPOI\Release Notes.txt" />
+    <Content Include="css\thickbox.css" />
+    <Content Include="Manage\ExamGradeManage.aspx" />
+    <Content Include="Manage\ExamInfoManage.aspx" />
+    <Content Include="File\Images1.jpg" />
+    <Content Include="File\ImagesQQ截图20170310150226.jpg" />
+    <Content Include="imgs.aspx" />
+    <Content Include="JobApplication.aspx" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\thickbox.jquery.js" />
+    <Content Include="KSDefault.aspx" />
+    <Content Include="KSPwd.aspx" />
+    <Content Include="Manage\CandidatesInfoUpd.aspx" />
+    <Content Include="css\Jss.js" />
+    <Content Include="css\master.css" />
+    <Content Include="Manage\css\Class1.css" />
+    <Content Include="Manage\css\Jss.js" />
+    <Content Include="Manage\css\master.css" />
+    <Content Include="Manage\css\thickbox.css" />
+    <Content Include="Manage\Default.aspx" />
+    <Content Include="image\caozuo.png" />
+    <Content Include="image\kuan.png" />
+    <Content Include="image\kuang.png" />
+    <Content Include="image\kuangg.png" />
+    <Content Include="image\li_bd.gif" />
+    <Content Include="image\nav_bd2.gif" />
+    <Content Include="image\top.png" />
+    <Content Include="image\topp.png" />
+    <Content Include="image\you.png" />
+    <Content Include="JobApp.aspx" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="js\jquery-1.3.2.min.js" />
+    <Content Include="js\jss.js" />
+    <Content Include="js\slideshow.js" />
+    <Content Include="index.aspx" />
+    <Content Include="Manage\File\ImagesQQ截图20170310150226.jpg" />
+    <Content Include="Manage\GradeManage.aspx" />
+    <Content Include="Manage\GradeUpd.aspx" />
+    <Content Include="Manage\image\caozuo.png" />
+    <Content Include="Manage\image\kuan.png" />
+    <Content Include="Manage\image\kuang.png" />
+    <Content Include="Manage\image\kuangg.png" />
+    <Content Include="Manage\image\li_bd.gif" />
+    <Content Include="Manage\image\nav_bd2.gif" />
+    <Content Include="Manage\image\top.png" />
+    <Content Include="Manage\image\topp.png" />
+    <Content Include="Manage\image\you.png" />
+    <Content Include="Manage\image\zhuce.png" />
+    <Content Include="Manage\JobApproval.aspx" />
+    <Content Include="Manage\JobExamManage.aspx" />
+    <Content Include="Manage\JobGradeManage.aspx" />
+    <Content Include="Manage\JobMangeCount.aspx" />
+    <Content Include="Manage\JobMangeTestAdd.aspx" />
+    <Content Include="Manage\JobTransfer.aspx" />
+    <Content Include="Manage\js\jquery-1.11.1.min.js" />
+    <Content Include="Manage\js\jquery-1.3.2.min.js" />
+    <Content Include="Manage\js\jquery.js" />
+    <Content Include="Manage\js\jss.js" />
+    <Content Include="Manage\js\slideshow.js" />
+    <Content Include="Manage\js\thickbox.jquery.js" />
+    <Content Include="Manage\Useatransfer.aspx" />
+    <Content Include="Manage\UserPwd.aspx" />
+    <Content Include="Manage\Login.aspx" />
+    <Content Include="Manage\My97DatePicker\calendar.js" />
+    <Content Include="Manage\My97DatePicker\config.js" />
+    <Content Include="Manage\My97DatePicker\lang\en.js" />
+    <Content Include="Manage\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Manage\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Manage\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Manage\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Manage\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Manage\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Manage\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Manage\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Manage\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Manage\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Manage\My97DatePicker\WdatePicker.js" />
+    <Content Include="Manage\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Manage\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Manage\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Manage\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Manage\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Manage\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Manage\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Manage\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Manage\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Manage\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Manage\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Manage\PersonnelAdd.aspx" />
+    <Content Include="Manage\PersonnelMange.aspx" />
+    <Content Include="Manage\PersonnelUpd.aspx" />
+    <Content Include="Manage\UserTransfer.aspx" />
+    <Content Include="Manage\zhuyi.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Manage\File\Template\CandidatesInfo.xls" />
+    <Content Include="File\Template\CandidatesInfo.xls" />
+    <Content Include="ZKZDetailed.aspx" />
+    <None Include="Properties\PublishProfiles\1.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KsCandidatesInfoAdd.aspx" />
+    <Content Include="Manage\CandidatesInfoMange.aspx" />
+    <Content Include="css\Class1.css" />
+    <Content Include="Manage\JobMange.aspx" />
+    <Content Include="Manage\JobMangeAdd.aspx" />
+    <Content Include="My97DatePicker\calendar.js" />
+    <Content Include="My97DatePicker\config.js" />
+    <Content Include="My97DatePicker\lang\en.js" />
+    <Content Include="My97DatePicker\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\My97DatePicker.htm" />
+    <Content Include="My97DatePicker\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\skin\default\img.gif" />
+    <Content Include="My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="My97DatePicker\WdatePicker.js" />
+    <Content Include="My97DatePicker\开发包\lang\en.js" />
+    <Content Include="My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\开发包\readme.txt" />
+    <Content Include="My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Photo.aspx" />
+    <Content Include="Registered.aspx" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="UserGrade.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplyEvent.aspx.cs">
+      <DependentUpon>ApplyEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyEvent.aspx.designer.cs">
+      <DependentUpon>ApplyEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ExamGradeManage.aspx.cs">
+      <DependentUpon>ExamGradeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\ExamGradeManage.aspx.designer.cs">
+      <DependentUpon>ExamGradeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ExamInfoManage.aspx.cs">
+      <DependentUpon>ExamInfoManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\ExamInfoManage.aspx.designer.cs">
+      <DependentUpon>ExamInfoManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imgs.aspx.cs">
+      <DependentUpon>imgs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imgs.aspx.designer.cs">
+      <DependentUpon>imgs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobApplication.aspx.cs">
+      <DependentUpon>JobApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobApplication.aspx.designer.cs">
+      <DependentUpon>JobApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KSDefault.aspx.cs">
+      <DependentUpon>KSDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KSDefault.aspx.designer.cs">
+      <DependentUpon>KSDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KSPwd.aspx.cs">
+      <DependentUpon>KSPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KSPwd.aspx.designer.cs">
+      <DependentUpon>KSPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\CandidatesInfoUpd.aspx.cs">
+      <DependentUpon>CandidatesInfoUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\CandidatesInfoUpd.aspx.designer.cs">
+      <DependentUpon>CandidatesInfoUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobApp.aspx.cs">
+      <DependentUpon>JobApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobApp.aspx.designer.cs">
+      <DependentUpon>JobApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KsCandidatesInfoAdd.aspx.cs">
+      <DependentUpon>KsCandidatesInfoAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KsCandidatesInfoAdd.aspx.designer.cs">
+      <DependentUpon>KsCandidatesInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\CandidatesInfoMange.aspx.cs">
+      <DependentUpon>CandidatesInfoMange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\CandidatesInfoMange.aspx.designer.cs">
+      <DependentUpon>CandidatesInfoMange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\GradeManage.aspx.cs">
+      <DependentUpon>GradeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\GradeManage.aspx.designer.cs">
+      <DependentUpon>GradeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\GradeUpd.aspx.cs">
+      <DependentUpon>GradeUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\GradeUpd.aspx.designer.cs">
+      <DependentUpon>GradeUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobApproval.aspx.cs">
+      <DependentUpon>JobApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobApproval.aspx.designer.cs">
+      <DependentUpon>JobApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobExamManage.aspx.cs">
+      <DependentUpon>JobExamManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobExamManage.aspx.designer.cs">
+      <DependentUpon>JobExamManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobGradeManage.aspx.cs">
+      <DependentUpon>JobGradeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobGradeManage.aspx.designer.cs">
+      <DependentUpon>JobGradeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobMange.aspx.cs">
+      <DependentUpon>JobMange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobMange.aspx.designer.cs">
+      <DependentUpon>JobMange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobMangeAdd.aspx.cs">
+      <DependentUpon>JobMangeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobMangeAdd.aspx.designer.cs">
+      <DependentUpon>JobMangeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobMangeCount.aspx.cs">
+      <DependentUpon>JobMangeCount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobMangeCount.aspx.designer.cs">
+      <DependentUpon>JobMangeCount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobMangeTestAdd.aspx.cs">
+      <DependentUpon>JobMangeTestAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobMangeTestAdd.aspx.designer.cs">
+      <DependentUpon>JobMangeTestAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\JobTransfer.aspx.cs">
+      <DependentUpon>JobTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\JobTransfer.aspx.designer.cs">
+      <DependentUpon>JobTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Useatransfer.aspx.cs">
+      <DependentUpon>Useatransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Useatransfer.aspx.designer.cs">
+      <DependentUpon>Useatransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\UserPwd.aspx.cs">
+      <DependentUpon>UserPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\UserPwd.aspx.designer.cs">
+      <DependentUpon>UserPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\PersonnelAdd.aspx.cs">
+      <DependentUpon>PersonnelAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\PersonnelAdd.aspx.designer.cs">
+      <DependentUpon>PersonnelAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\PersonnelMange.aspx.cs">
+      <DependentUpon>PersonnelMange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\PersonnelMange.aspx.designer.cs">
+      <DependentUpon>PersonnelMange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\PersonnelUpd.aspx.cs">
+      <DependentUpon>PersonnelUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\PersonnelUpd.aspx.designer.cs">
+      <DependentUpon>PersonnelUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\UserTransfer.aspx.cs">
+      <DependentUpon>UserTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\UserTransfer.aspx.designer.cs">
+      <DependentUpon>UserTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\zhuyi.aspx.cs">
+      <DependentUpon>zhuyi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\zhuyi.aspx.designer.cs">
+      <DependentUpon>zhuyi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo.aspx.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo.aspx.designer.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registered.aspx.cs">
+      <DependentUpon>Registered.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registered.aspx.designer.cs">
+      <DependentUpon>Registered.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserGrade.aspx.cs">
+      <DependentUpon>UserGrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserGrade.aspx.designer.cs">
+      <DependentUpon>UserGrade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ZKZDetailed.aspx.cs">
+      <DependentUpon>ZKZDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZKZDetailed.aspx.designer.cs">
+      <DependentUpon>ZKZDetailed.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Recruitment_Data\Recruitment_Data.csproj">
+      <Project>{c7730710-a1f3-473b-8b9b-52ad61f8a7a7}</Project>
+      <Name>Recruitment_Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="File\Image\" />
+    <Folder Include="Manage\File\Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3357</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3357/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

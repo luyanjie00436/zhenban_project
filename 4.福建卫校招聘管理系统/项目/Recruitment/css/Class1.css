@@ -1,0 +1,16 @@
+﻿html {
+overflow-x:hidden;
+overflow-y:auto;
+}
+* {
+    margin:0px;
+    padding:0px;
+}
+.GridViewStyle
+{
+font-family: Arial, Sans-Serif;
+font-size:small;
+table-layout: auto;
+border-collapse: collapse;
+border: #1d1d1d 1px solid;
+}
