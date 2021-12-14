@@ -1,0 +1,3313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32EC6555-4632-4F1F-B7BF-DA095CB15F54}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScientManage_Web</RootNamespace>
+    <AssemblyName>ScientManage_Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <IncludeIisSettings>true</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>D:\360极速浏览器下载\NPOI\NPOI\X86\1.2.4.0\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.1\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminSeriesAdd.aspx" />
+    <Content Include="AdminSeriesManage.aspx" />
+    <Content Include="AdminSeriesUpd.aspx" />
+    <Content Include="ApplyRemarksUpd.aspx" />
+    <Content Include="ApplyView.aspx" />
+    <Content Include="ApplyYearAdd.aspx" />
+    <Content Include="ApplyYearManage.aspx" />
+    <Content Include="ApplyYearUpd.aspx" />
+    <Content Include="AssessDetailed.aspx" />
+    <Content Include="AssessRankAdd.aspx" />
+    <Content Include="AssessRankManage.aspx" />
+    <Content Include="AssessRankUpd.aspx" />
+    <Content Include="AssessValueReserve.aspx" />
+    <Content Include="AssessYear.aspx" />
+    <Content Include="Authority.aspx" />
+    <Content Include="CapitalItemAdd.aspx" />
+    <Content Include="CapitalItemManage.aspx" />
+    <Content Include="CapitalItemUpd.aspx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\master.css" />
+    <Content Include="css\master_20140704135017.css" />
+    <Content Include="css\Mobile.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\thickbox2.css" />
+    <Content Include="css\thickbox.css" />
+    <Content Include="C_constructionAdd.aspx" />
+    <Content Include="C_constructionDetailed.aspx" />
+    <Content Include="C_constructionExamineDetailed.aspx" />
+    <Content Include="C_constructionExamineManage.aspx" />
+    <Content Include="C_constructionManage.aspx" />
+    <Content Include="C_constructionPartnerManage.aspx" />
+    <Content Include="C_constructionProcess.aspx" />
+    <Content Include="C_constructionStatusManage.aspx" />
+    <Content Include="C_constructionStatusModify.aspx" />
+    <Content Include="C_winnersAdd.aspx" />
+    <Content Include="C_winnersDetailed.aspx" />
+    <Content Include="C_winnersExamineDetailed.aspx" />
+    <Content Include="C_winnersExamineManage.aspx" />
+    <Content Include="C_winnersManage.aspx" />
+    <Content Include="C_winnersPartnerManage.aspx" />
+    <Content Include="C_winnersProcess.aspx" />
+    <Content Include="C_winnersStatusManage.aspx" />
+    <Content Include="C_winnersStatusModify.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="ExpertResourcesAdd.aspx" />
+    <Content Include="ExpertResourcesManage.aspx" />
+    <Content Include="ExpertReviewAdd.aspx" />
+    <Content Include="ExpertReviewManage.aspx" />
+    <Content Include="ExpertReviewMembers.aspx" />
+    <Content Include="ExpertReviewMembersAdd.aspx" />
+    <Content Include="GuidanceStatusManage.aspx" />
+    <Content Include="GuidanceStatusModify.aspx" />
+    <Content Include="HarvestStatusManage.aspx" />
+    <Content Include="HarvestStatusModify.aspx" />
+    <Content Include="Images\.DS_Store" />
+    <Content Include="Images\21.jpg" />
+    <Content Include="Images\22.jpg" />
+    <Content Include="Images\23.jpg" />
+    <Content Include="Images\24.jpg" />
+    <Content Include="Images\25.jpg" />
+    <Content Include="Images\26.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\applymanage.css" />
+    <Content Include="Images\backgroup.jpg" />
+    <Content Include="Images\bg_top_btn01.gif" />
+    <Content Include="Images\bg_top_btn02.gif" />
+    <Content Include="Images\btn001.gif" />
+    <Content Include="Images\btn002.gif" />
+    <Content Include="Images\btn003.gif" />
+    <Content Include="Images\btn004.gif" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\chongzhi.jpg" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\close.jpg" />
+    <Content Include="Images\close_left.gif" />
+    <Content Include="Images\defaule2_logo.png" />
+    <Content Include="Images\default2_logo.png" />
+    <Content Include="Images\default_logo.png" />
+    <Content Include="Images\file.gif" />
+    <Content Include="Images\file02.gif" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\icon001.gif" />
+    <Content Include="Images\jquery-1.4.1.js" />
+    <Content Include="Images\jquery-1.4.1.min.js" />
+    <Content Include="Images\jquery-1.6.min.js" />
+    <Content Include="Images\js.js" />
+    <Content Include="Images\left_menu.png" />
+    <Content Include="Images\left_title_bg.gif" />
+    <Content Include="Images\login.css" />
+    <Content Include="Images\loginin.jpg" />
+    <Content Include="Images\login_bg01.gif" />
+    <Content Include="Images\login_bg02.jpg" />
+    <Content Include="Images\login_bg02.png" />
+    <Content Include="Images\login_bj9.png" />
+    <Content Include="Images\login_btn01.gif" />
+    <Content Include="Images\login_btn01.png" />
+    <Content Include="Images\login_btn02.gif" />
+    <Content Include="Images\login_btn02.png" />
+    <Content Include="Images\login_input01.gif" />
+    <Content Include="Images\login_input02.gif" />
+    <Content Include="Images\login_input02.jpg" />
+    <Content Include="Images\login_kuang.png" />
+    <Content Include="Images\login_kuank2.png" />
+    <Content Include="Images\login_logo.png" />
+    <Content Include="Images\login_logow.png" />
+    <Content Include="Images\login_logo_biaoti.png" />
+    <Content Include="Images\login_top.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\main_mid_bg.gif" />
+    <Content Include="Images\menu_bj.png" />
+    <Content Include="Images\mima.png" />
+    <Content Include="Images\open.gif" />
+    <Content Include="Images\open.jpg" />
+    <Content Include="Images\open_left.gif" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\page_title_01.gif" />
+    <Content Include="Images\page_title_02.gif" />
+    <Content Include="Images\page_title_bg.gif" />
+    <Content Include="Images\st_folder.gif" />
+    <Content Include="Images\st_folder_open.gif" />
+    <Content Include="Images\st_icon.png" />
+    <Content Include="Images\st_icon_open.png" />
+    <Content Include="Images\st_node.gif" />
+    <Content Include="Images\topp.png" />
+    <Content Include="Images\top_bg.gif" />
+    <Content Include="Images\top_bg02.jpg" />
+    <Content Include="Images\top_btn001.gif" />
+    <Content Include="Images\top_btn002.gif" />
+    <Content Include="Images\top_btn01.gif" />
+    <Content Include="Images\top_btn02.gif" />
+    <Content Include="Images\top_line.gif" />
+    <Content Include="Images\tuichu.png" />
+    <Content Include="Images\welcome_pic.jpg" />
+    <Content Include="imga_dyxl.aspx" />
+    <Content Include="imgs.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="index.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="DegreeAdd.aspx" />
+    <Content Include="DegreeManage.aspx" />
+    <Content Include="DegreeUpd.aspx" />
+    <Content Include="DepartmentAdd.aspx" />
+    <Content Include="DepartmentManage.aspx" />
+    <Content Include="DepartmentUpd.aspx" />
+    <Content Include="DepView.aspx" />
+    <Content Include="EducationAdd.aspx" />
+    <Content Include="EducationManage.aspx" />
+    <Content Include="EducationUpd.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GuidanceAdd.aspx" />
+    <Content Include="GuidanceDetailed.aspx" />
+    <Content Include="GuidanceExamineDetailed.aspx" />
+    <Content Include="GuidanceExamineManage.aspx" />
+    <Content Include="GuidanceManage.aspx" />
+    <Content Include="GuidancePartnerManage.aspx" />
+    <Content Include="GuidanceProcess.aspx" />
+    <Content Include="HarvestAdd.aspx" />
+    <Content Include="HarvestDetailed.aspx" />
+    <Content Include="HarvestExamineDetailed.aspx" />
+    <Content Include="HarvestExamineManage.aspx" />
+    <Content Include="HarvestManage.aspx" />
+    <Content Include="HarvestPartnerManage.aspx" />
+    <Content Include="HarvestProcess.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="InstructionsForUse.aspx" />
+    <Content Include="javascript\base.js" />
+    <Content Include="javascript\jquery.js" />
+    <Content Include="javascript\slider.js" />
+    <Content Include="JobAdd.aspx" />
+    <Content Include="JobCertificatePhoto.aspx" />
+    <Content Include="JobManage.aspx" />
+    <Content Include="JobUpd.aspx" />
+    <Content Include="JournalManage.aspx" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Common.js" />
+    <Content Include="js\fileupload.js" />
+    <Content Include="js\function.js" />
+    <Content Include="js\JavaScript.js" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <None Include="js\jquery-1.8.2.intellisense.js" />
+    <Content Include="js\jquery-1.8.2.js" />
+    <Content Include="js\jquery-1.8.2.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\yanzheng.js" />
+    <Content Include="Login1.aspx" />
+    <Content Include="LongCapitalBasicAdd.aspx" />
+    <Content Include="LongCapitalBasicManage.aspx" />
+    <Content Include="LongCapitalBasicSituation.aspx" />
+    <Content Include="LongCapitalChangeAdd.aspx" />
+    <Content Include="LongCapitalChangeDetailed.aspx" />
+    <Content Include="LongCapitalChangeExamineDetailed.aspx" />
+    <Content Include="LongCapitalChangeExamineManage.aspx" />
+    <Content Include="LongCapitalChangeManage.aspx" />
+    <Content Include="LongCapitalChangeProcess.aspx" />
+    <Content Include="LongCapitalCloseAdd.aspx" />
+    <Content Include="LongCapitalCloseDetailed.aspx" />
+    <Content Include="LongCapitalCloseExamineDetailed.aspx" />
+    <Content Include="LongCapitalCloseExamineManage.aspx" />
+    <Content Include="LongCapitalCloseManage.aspx" />
+    <Content Include="LongCapitalCloseProcess.aspx" />
+    <Content Include="LongCapitalManage.aspx" />
+    <Content Include="LongCapitalPlaceAdd.aspx" />
+    <Content Include="LongCapitalPlaceDetailed.aspx" />
+    <Content Include="LongCapitalPlaceManage.aspx" />
+    <Content Include="LongCapitalPlaceSituation.aspx" />
+    <Content Include="LongCapitalPlanAdd.aspx" />
+    <Content Include="LongCapitalPlanDetailed.aspx" />
+    <Content Include="LongCapitalPlanExamineDetailed.aspx" />
+    <Content Include="LongCapitalPlanExamineManage.aspx" />
+    <Content Include="LongCapitalPlanManage.aspx" />
+    <Content Include="LongCapitalPlanProcess.aspx" />
+    <Content Include="LongProjectsDeclareAdd.aspx" />
+    <Content Include="LongProjectsDeclareDetailed.aspx" />
+    <Content Include="LongProjectsDeclareExamineDetailed.aspx" />
+    <Content Include="LongProjectsDeclareExamineManage.aspx" />
+    <Content Include="LongProjectsDeclareManage.aspx" />
+    <Content Include="LongProjectsDeclareProcess.aspx" />
+    <Content Include="LongProjectsEndAdd.aspx" />
+    <Content Include="LongProjectsEndBranchDetailed.aspx" />
+    <Content Include="LongProjectsEndBranchManage.aspx" />
+    <Content Include="LongProjectsEndDetailed.aspx" />
+    <Content Include="LongProjectsEndExamineDetailed.aspx" />
+    <Content Include="LongProjectsEndExamineManage.aspx" />
+    <Content Include="LongProjectsEndManage.aspx" />
+    <Content Include="LongProjectsInspectAdd.aspx" />
+    <Content Include="LongProjectsInspectDetailed.aspx" />
+    <Content Include="LongProjectsInspectExamineDetailed.aspx" />
+    <Content Include="LongProjectsInspectExamineManage.aspx" />
+    <Content Include="LongProjectsInspectManage.aspx" />
+    <Content Include="LongProjectsManage.aspx" />
+    <Content Include="LongProjectsStandAdd.aspx" />
+    <Content Include="LongProjectsStandBranchDetailed.aspx" />
+    <Content Include="LongProjectsStandBranchManage.aspx" />
+    <Content Include="LongProjectsStandDetailed.aspx" />
+    <Content Include="LongProjectsStandExamineDetailed.aspx" />
+    <Content Include="LongProjectsStandExamineManage.aspx" />
+    <Content Include="LongProjectsStandManage.aspx" />
+    <Content Include="LongProjectsSumAdd.aspx" />
+    <Content Include="LongProjectsSumManage.aspx" />
+    <Content Include="MyC_constructionManage.aspx" />
+    <Content Include="MyC_winnersManage.aspx" />
+    <Content Include="MyProjectsApprovalManage.aspx" />
+    <Content Include="MyProjectsEndManage.aspx" />
+    <Content Include="MyP_constructionManage.aspx" />
+    <Content Include="MyResultsManage.aspx" />
+    <Content Include="MyShortProjectsApprovalManage.aspx" />
+    <Content Include="MyShortProjectsEndManage.aspx" />
+    <Content Include="MyTeachToTeachingManage.aspx" />
+    <Content Include="MySpecialManage.aspx" />
+    <Content Include="MyTeaching_TeamManage.aspx" />
+    <Content Include="MyT_TeachingManage.aspx" />
+    <Content Include="MyWorkLoadProjectsManage.aspx" />
+    <Content Include="OldView.aspx" />
+    <Content Include="PaperStatusManage.aspx" />
+    <Content Include="PaperStatusModify.aspx" />
+    <Content Include="PastAwardsPhoto.aspx" />
+    <Content Include="PatentStatusManage.aspx" />
+    <Content Include="PatentStatusModify.aspx" />
+    <Content Include="Photo.aspx" />
+    <Content Include="Photo_dyxl.aspx" />
+    <Content Include="ProjectsFromAdd.aspx" />
+    <Content Include="ProjectsFromManage.aspx" />
+    <Content Include="ProjectsFromUpd.aspx" />
+    <Content Include="ProjectsLevelAdd.aspx" />
+    <Content Include="ProjectsLevelManage.aspx" />
+    <Content Include="ProjectsLevelUpd.aspx" />
+    <Content Include="ProjectsSubjectAdd.aspx" />
+    <Content Include="ProjectsSubjectManage.aspx" />
+    <Content Include="ProjectsSubjectUpd.aspx" />
+    <Content Include="ProjectsTemplateAdd.aspx" />
+    <Content Include="ProjectsTemplateManage.aspx" />
+    <Content Include="P_constructionAdd.aspx" />
+    <Content Include="P_constructionDetailed.aspx" />
+    <Content Include="P_constructionExamineDetailed.aspx" />
+    <Content Include="P_constructionExamineManage.aspx" />
+    <Content Include="P_constructionManage.aspx" />
+    <Content Include="P_constructionPartnerManage.aspx" />
+    <Content Include="P_constructionProcess.aspx" />
+    <Content Include="P_constructionStatusManage.aspx" />
+    <Content Include="P_constructionStatusModify.aspx" />
+    <Content Include="Rank_User.aspx" />
+    <Content Include="ResultsAdd.aspx" />
+    <Content Include="ResultsDetailed.aspx" />
+    <Content Include="ResultsExamineDetailed.aspx" />
+    <Content Include="ResultsExamineManage.aspx" />
+    <Content Include="ResultsManage.aspx" />
+    <Content Include="ResultsPartnerManage.aspx" />
+    <Content Include="ResultsProcess.aspx" />
+    <Content Include="ResultsStatusManage.aspx" />
+    <Content Include="ResultsStatusModify.aspx" />
+    <Content Include="ShortCapitalBasicAdd.aspx" />
+    <Content Include="ShortCapitalBasicManage.aspx" />
+    <Content Include="ShortCapitalBasicSituation.aspx" />
+    <Content Include="ShortCapitalChangeAdd.aspx" />
+    <Content Include="ShortCapitalChangeDetailed.aspx" />
+    <Content Include="ShortCapitalChangeExamineDetailed.aspx" />
+    <Content Include="ShortCapitalChangeExamineManage.aspx" />
+    <Content Include="ShortCapitalChangeManage.aspx" />
+    <Content Include="ShortCapitalChangeProcess.aspx" />
+    <Content Include="ShortCapitalCloseAdd.aspx" />
+    <Content Include="ShortCapitalCloseDetailed.aspx" />
+    <Content Include="ShortCapitalCloseExamineDetailed.aspx" />
+    <Content Include="ShortCapitalCloseExamineManage.aspx" />
+    <Content Include="ShortCapitalCloseManage.aspx" />
+    <Content Include="ShortCapitalCloseProcess.aspx" />
+    <Content Include="ShortCapitalManage.aspx" />
+    <Content Include="ShortCapitalPlaceAdd.aspx" />
+    <Content Include="ShortCapitalPlaceDetailed.aspx" />
+    <Content Include="ShortCapitalPlaceManage.aspx" />
+    <Content Include="ShortCapitalPlaceSituation.aspx" />
+    <Content Include="ShortCapitalPlanAdd.aspx" />
+    <Content Include="ShortCapitalPlanDetailed.aspx" />
+    <Content Include="ShortCapitalPlanExamineDetailed.aspx" />
+    <Content Include="ShortCapitalPlanExamineManage.aspx" />
+    <Content Include="ShortCapitalPlanManage.aspx" />
+    <Content Include="ShortCapitalPlanProcess.aspx" />
+    <Content Include="ShortProjectsEndAdd.aspx" />
+    <Content Include="ShortProjectsEndDetailed.aspx" />
+    <Content Include="ShortProjectsEndExamineDetailed.aspx" />
+    <Content Include="ShortProjectsEndExamineManage.aspx" />
+    <Content Include="ShortProjectsEndManage.aspx" />
+    <Content Include="ShortProjectsManage.aspx" />
+    <Content Include="ShortProjectsProcess.aspx" />
+    <Content Include="ShortProjectsStandAdd.aspx" />
+    <Content Include="ShortProjectsStandDetailed.aspx" />
+    <Content Include="ShortProjectsStandExamineDetailed.aspx" />
+    <Content Include="ShortProjectsStandExamineManage.aspx" />
+    <Content Include="ShortProjectsStandManage.aspx" />
+    <Content Include="StudyTrainPhoto.aspx" />
+    <Content Include="TeachToTeachingAdd.aspx" />
+    <Content Include="SpecialAdd.aspx" />
+    <Content Include="TeachToTeachingDetailed.aspx" />
+    <Content Include="SpecialDetailed.aspx" />
+    <Content Include="TeachToTeachingExamineDetailed.aspx" />
+    <Content Include="SpecialExamineDetailed.aspx" />
+    <Content Include="TeachToTeachingExamineManage.aspx" />
+    <Content Include="SpecialExamineManage.aspx" />
+    <Content Include="TeachToTeachingManage.aspx" />
+    <Content Include="SpecialManage.aspx" />
+    <Content Include="TeachToTeachingProcess.aspx" />
+    <Content Include="SpecialProcess.aspx" />
+    <Content Include="TeachToTeachingStatusManage.aspx" />
+    <Content Include="SpecialStatusManage.aspx" />
+    <Content Include="TeachToTeachingStatusModify.aspx" />
+    <Content Include="SpecialStatusModify.aspx" />
+    <Content Include="TeachingStatusManage.aspx" />
+    <Content Include="TeachingStatusModify.aspx" />
+    <Content Include="Teaching_TeamAdd.aspx" />
+    <Content Include="Teaching_TeamDetailed.aspx" />
+    <Content Include="Teaching_TeamExamineDetailed.aspx" />
+    <Content Include="Teaching_TeamExamineManage.aspx" />
+    <Content Include="Teaching_TeamManage.aspx" />
+    <Content Include="Teaching_TeamPartnerManage.aspx" />
+    <Content Include="Teaching_TeamProcess.aspx" />
+    <Content Include="Teaching_TeamStatusManage.aspx" />
+    <Content Include="Teaching_TeamStatusModify.aspx" />
+    <Content Include="T_AssessDetailed.aspx" />
+    <Content Include="T_AssessValueReserve.aspx" />
+    <Content Include="T_AssessYear.aspx" />
+    <Content Include="T_DepView.aspx" />
+    <Content Include="T_TeachingAdd.aspx" />
+    <Content Include="T_TeachingDetailed.aspx" />
+    <Content Include="T_TeachingExamineDetailed.aspx" />
+    <Content Include="T_TeachingExamineManage.aspx" />
+    <Content Include="T_TeachingManage.aspx" />
+    <Content Include="T_TeachingProcess.aspx" />
+    <Content Include="T_TeachingStatusManage.aspx" />
+    <Content Include="T_TeachingStatusModify.aspx" />
+    <Content Include="T_UserWork.aspx" />
+    <Content Include="UseJobPostAdd.aspx" />
+    <Content Include="UseJobPostManage.aspx" />
+    <Content Include="UseJobPostUpd.aspx" />
+    <Content Include="UseOfficeAdd.aspx" />
+    <Content Include="UseOfficeManage.aspx" />
+    <Content Include="UseOfficeUpd.aspx" />
+    <Content Include="UsePerAppMan.aspx" />
+    <Content Include="UsePhoto.aspx" />
+    <Content Include="UseRemunerationAdd.aspx" />
+    <Content Include="UseRemunerationManage.aspx" />
+    <Content Include="UseRemunerationUpd.aspx" />
+    <Content Include="UserEnable.aspx" />
+    <Content Include="UserWork.aspx" />
+    <Content Include="WinningStatusManage.aspx" />
+    <Content Include="WinningStatusModify.aspx" />
+    <Content Include="WorkLoadProjectsAdd.aspx" />
+    <Content Include="WorkLoadProjectsDetailed.aspx" />
+    <Content Include="WorkLoadProjectsExamineDetailed.aspx" />
+    <Content Include="WorkLoadProjectsExamineManage.aspx" />
+    <Content Include="WorkLoadProjectsManage.aspx" />
+    <Content Include="WorkLoadProjectsPartnerManage.aspx" />
+    <Content Include="WorkLoadProjectsProcess.aspx" />
+    <Content Include="File\Template\CapitalAdjustNatural.dot" />
+    <Content Include="File\Template\CapitalAdjustSociology.dot" />
+    <Content Include="File\Template\CapitalPlanNatural.dot" />
+    <Content Include="File\Template\CapitalPlanSociology.dot" />
+    <Content Include="File\Template\FinalCapital.xls" />
+    <Content Include="File\Template\Work.xls" />
+    <Content Include="File\Template\测试文档.docx" />
+    <Content Include="File\Template\T_Work.xls" />
+    <Content Include="WorkLoadProjectsStatusManage.aspx" />
+    <Content Include="WorkLoadProjectsStatusModify.aspx" />
+    <None Include="js\jQuery.1.2.6.zh-cn-vsdoc.js" />
+    <Content Include="js\jquery.addpic.js" />
+    <Content Include="js\jquery.form.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\News.js" />
+    <Content Include="js\pagevalidator.js" />
+    <Content Include="js\thickbox.jquery.js" />
+    <Content Include="Left.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="ModelAdd.aspx" />
+    <Content Include="ModelManage.aspx" />
+    <Content Include="ModelUpd.aspx" />
+    <Content Include="My97DatePicker\calendar.js" />
+    <Content Include="My97DatePicker\config.js" />
+    <Content Include="My97DatePicker\lang\en.js" />
+    <Content Include="My97DatePicker\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\My97DatePicker.htm" />
+    <Content Include="My97DatePicker\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\skin\default\img.gif" />
+    <Content Include="My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="My97DatePicker\WdatePicker.js" />
+    <Content Include="My97DatePicker\开发包\lang\en.js" />
+    <Content Include="My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\开发包\readme.txt" />
+    <Content Include="My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="MyGuidanceManage.aspx" />
+    <Content Include="MyHarvestManage.aspx" />
+    <Content Include="MyPaperManage.aspx" />
+    <Content Include="MyPatentManage.aspx" />
+    <Content Include="MyTeachingManage.aspx" />
+    <Content Include="MyWinningManage.aspx" />
+    <Content Include="NationAdd.aspx" />
+    <Content Include="NationManage.aspx" />
+    <Content Include="NationUpd.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="PaperAdd.aspx" />
+    <Content Include="PaperDetailed.aspx" />
+    <Content Include="PaperExamineDetailed.aspx" />
+    <Content Include="PaperExamineManage.aspx" />
+    <Content Include="PaperManage.aspx" />
+    <Content Include="PaperPartnerManage.aspx" />
+    <Content Include="PaperProcess.aspx" />
+    <Content Include="PatentAdd.aspx" />
+    <Content Include="PatentDetailed.aspx" />
+    <Content Include="PatentExamineDetailed.aspx" />
+    <Content Include="PatentExamineManage.aspx" />
+    <Content Include="PatentManage.aspx" />
+    <Content Include="PatentPartnerManage.aspx" />
+    <Content Include="PatentProcess.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\2.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="TeachingAdd.aspx" />
+    <Content Include="TeachingDetailed.aspx" />
+    <Content Include="TeachingExamineDetailed.aspx" />
+    <Content Include="TeachingExamineManage.aspx" />
+    <Content Include="TeachingManage.aspx" />
+    <Content Include="TeachingPartnerManage.aspx" />
+    <Content Include="TeachingProcess.aspx" />
+    <Content Include="WinningAdd.aspx" />
+    <Content Include="WinningDetailed.aspx" />
+    <Content Include="WinningExamineDetailed.aspx" />
+    <Content Include="WinningExamineManage.aspx" />
+    <Content Include="WinningManage.aspx" />
+    <Content Include="WinningPartnerManage.aspx" />
+    <Content Include="WinningProcess.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\1.pubxml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="PoliticalAdd.aspx" />
+    <Content Include="PoliticalManage.aspx" />
+    <Content Include="PoliticalUpd.aspx" />
+    <Content Include="PostAdd.aspx" />
+    <Content Include="PostManage.aspx" />
+    <Content Include="PostUpd.aspx" />
+    <Content Include="RankAdd.aspx" />
+    <Content Include="RankManage.aspx" />
+    <Content Include="RankUpd.aspx" />
+    <Content Include="Right.aspx" />
+    <Content Include="RoleAdd.aspx" />
+    <Content Include="RoleManage.aspx" />
+    <Content Include="RoleUpd.aspx" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="StatusAdd.aspx" />
+    <Content Include="StatusManage.aspx" />
+    <Content Include="StatusUpd.aspx" />
+    <Content Include="UserEmail.aspx" />
+    <Content Include="UserInfoAdd.aspx" />
+    <Content Include="UserInfoManage.aspx" />
+    <Content Include="UserInfoPwd.aspx" />
+    <Content Include="UserInfoUpd.aspx" />
+    <Content Include="UserMyPwd.aspx" />
+    <Content Include="UserPhone.aspx" />
+    <Content Include="UserRankManage.aspx" />
+    <Content Include="UserRole.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\_references.js" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminSeriesAdd.aspx.cs">
+      <DependentUpon>AdminSeriesAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSeriesAdd.aspx.designer.cs">
+      <DependentUpon>AdminSeriesAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSeriesManage.aspx.cs">
+      <DependentUpon>AdminSeriesManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSeriesManage.aspx.designer.cs">
+      <DependentUpon>AdminSeriesManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSeriesUpd.aspx.cs">
+      <DependentUpon>AdminSeriesUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSeriesUpd.aspx.designer.cs">
+      <DependentUpon>AdminSeriesUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyRemarksUpd.aspx.cs">
+      <DependentUpon>ApplyRemarksUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyRemarksUpd.aspx.designer.cs">
+      <DependentUpon>ApplyRemarksUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyView.aspx.cs">
+      <DependentUpon>ApplyView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyView.aspx.designer.cs">
+      <DependentUpon>ApplyView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyYearAdd.aspx.cs">
+      <DependentUpon>ApplyYearAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyYearAdd.aspx.designer.cs">
+      <DependentUpon>ApplyYearAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyYearManage.aspx.cs">
+      <DependentUpon>ApplyYearManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyYearManage.aspx.designer.cs">
+      <DependentUpon>ApplyYearManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyYearUpd.aspx.cs">
+      <DependentUpon>ApplyYearUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyYearUpd.aspx.designer.cs">
+      <DependentUpon>ApplyYearUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\CustomHeaderModule.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AssessDetailed.aspx.cs">
+      <DependentUpon>AssessDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessDetailed.aspx.designer.cs">
+      <DependentUpon>AssessDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessRankAdd.aspx.cs">
+      <DependentUpon>AssessRankAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessRankAdd.aspx.designer.cs">
+      <DependentUpon>AssessRankAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessRankManage.aspx.cs">
+      <DependentUpon>AssessRankManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessRankManage.aspx.designer.cs">
+      <DependentUpon>AssessRankManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessRankUpd.aspx.cs">
+      <DependentUpon>AssessRankUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessRankUpd.aspx.designer.cs">
+      <DependentUpon>AssessRankUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessValueReserve.aspx.cs">
+      <DependentUpon>AssessValueReserve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessValueReserve.aspx.designer.cs">
+      <DependentUpon>AssessValueReserve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessYear.aspx.cs">
+      <DependentUpon>AssessYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessYear.aspx.designer.cs">
+      <DependentUpon>AssessYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authority.aspx.cs">
+      <DependentUpon>Authority.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authority.aspx.designer.cs">
+      <DependentUpon>Authority.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapitalItemAdd.aspx.cs">
+      <DependentUpon>CapitalItemAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapitalItemAdd.aspx.designer.cs">
+      <DependentUpon>CapitalItemAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapitalItemManage.aspx.cs">
+      <DependentUpon>CapitalItemManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapitalItemManage.aspx.designer.cs">
+      <DependentUpon>CapitalItemManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapitalItemUpd.aspx.cs">
+      <DependentUpon>CapitalItemUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapitalItemUpd.aspx.designer.cs">
+      <DependentUpon>CapitalItemUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionAdd.aspx.cs">
+      <DependentUpon>C_constructionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionAdd.aspx.designer.cs">
+      <DependentUpon>C_constructionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionDetailed.aspx.cs">
+      <DependentUpon>C_constructionDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionDetailed.aspx.designer.cs">
+      <DependentUpon>C_constructionDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionExamineDetailed.aspx.cs">
+      <DependentUpon>C_constructionExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionExamineDetailed.aspx.designer.cs">
+      <DependentUpon>C_constructionExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionExamineManage.aspx.cs">
+      <DependentUpon>C_constructionExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionExamineManage.aspx.designer.cs">
+      <DependentUpon>C_constructionExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionManage.aspx.cs">
+      <DependentUpon>C_constructionManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionManage.aspx.designer.cs">
+      <DependentUpon>C_constructionManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionPartnerManage.aspx.cs">
+      <DependentUpon>C_constructionPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionPartnerManage.aspx.designer.cs">
+      <DependentUpon>C_constructionPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionProcess.aspx.cs">
+      <DependentUpon>C_constructionProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionProcess.aspx.designer.cs">
+      <DependentUpon>C_constructionProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionStatusManage.aspx.cs">
+      <DependentUpon>C_constructionStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionStatusManage.aspx.designer.cs">
+      <DependentUpon>C_constructionStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_constructionStatusModify.aspx.cs">
+      <DependentUpon>C_constructionStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_constructionStatusModify.aspx.designer.cs">
+      <DependentUpon>C_constructionStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersAdd.aspx.cs">
+      <DependentUpon>C_winnersAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersAdd.aspx.designer.cs">
+      <DependentUpon>C_winnersAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersDetailed.aspx.cs">
+      <DependentUpon>C_winnersDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersDetailed.aspx.designer.cs">
+      <DependentUpon>C_winnersDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersExamineDetailed.aspx.cs">
+      <DependentUpon>C_winnersExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersExamineDetailed.aspx.designer.cs">
+      <DependentUpon>C_winnersExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersExamineManage.aspx.cs">
+      <DependentUpon>C_winnersExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersExamineManage.aspx.designer.cs">
+      <DependentUpon>C_winnersExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersManage.aspx.cs">
+      <DependentUpon>C_winnersManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersManage.aspx.designer.cs">
+      <DependentUpon>C_winnersManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersPartnerManage.aspx.cs">
+      <DependentUpon>C_winnersPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersPartnerManage.aspx.designer.cs">
+      <DependentUpon>C_winnersPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersProcess.aspx.cs">
+      <DependentUpon>C_winnersProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersProcess.aspx.designer.cs">
+      <DependentUpon>C_winnersProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersStatusManage.aspx.cs">
+      <DependentUpon>C_winnersStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersStatusManage.aspx.designer.cs">
+      <DependentUpon>C_winnersStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="C_winnersStatusModify.aspx.cs">
+      <DependentUpon>C_winnersStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C_winnersStatusModify.aspx.designer.cs">
+      <DependentUpon>C_winnersStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DegreeAdd.aspx.cs">
+      <DependentUpon>DegreeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DegreeAdd.aspx.designer.cs">
+      <DependentUpon>DegreeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DegreeManage.aspx.cs">
+      <DependentUpon>DegreeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DegreeManage.aspx.designer.cs">
+      <DependentUpon>DegreeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DegreeUpd.aspx.cs">
+      <DependentUpon>DegreeUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DegreeUpd.aspx.designer.cs">
+      <DependentUpon>DegreeUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentAdd.aspx.cs">
+      <DependentUpon>DepartmentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentAdd.aspx.designer.cs">
+      <DependentUpon>DepartmentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentManage.aspx.cs">
+      <DependentUpon>DepartmentManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentManage.aspx.designer.cs">
+      <DependentUpon>DepartmentManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentUpd.aspx.cs">
+      <DependentUpon>DepartmentUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentUpd.aspx.designer.cs">
+      <DependentUpon>DepartmentUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepView.aspx.cs">
+      <DependentUpon>DepView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepView.aspx.designer.cs">
+      <DependentUpon>DepView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EducationAdd.aspx.cs">
+      <DependentUpon>EducationAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EducationAdd.aspx.designer.cs">
+      <DependentUpon>EducationAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EducationManage.aspx.cs">
+      <DependentUpon>EducationManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EducationManage.aspx.designer.cs">
+      <DependentUpon>EducationManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EducationUpd.aspx.cs">
+      <DependentUpon>EducationUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EducationUpd.aspx.designer.cs">
+      <DependentUpon>EducationUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpertResourcesAdd.aspx.cs">
+      <DependentUpon>ExpertResourcesAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpertResourcesAdd.aspx.designer.cs">
+      <DependentUpon>ExpertResourcesAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpertResourcesManage.aspx.cs">
+      <DependentUpon>ExpertResourcesManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpertResourcesManage.aspx.designer.cs">
+      <DependentUpon>ExpertResourcesManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpertReviewAdd.aspx.cs">
+      <DependentUpon>ExpertReviewAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpertReviewAdd.aspx.designer.cs">
+      <DependentUpon>ExpertReviewAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpertReviewManage.aspx.cs">
+      <DependentUpon>ExpertReviewManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpertReviewManage.aspx.designer.cs">
+      <DependentUpon>ExpertReviewManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpertReviewMembers.aspx.cs">
+      <DependentUpon>ExpertReviewMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpertReviewMembers.aspx.designer.cs">
+      <DependentUpon>ExpertReviewMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpertReviewMembersAdd.aspx.cs">
+      <DependentUpon>ExpertReviewMembersAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpertReviewMembersAdd.aspx.designer.cs">
+      <DependentUpon>ExpertReviewMembersAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceAdd.aspx.cs">
+      <DependentUpon>GuidanceAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceAdd.aspx.designer.cs">
+      <DependentUpon>GuidanceAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceDetailed.aspx.cs">
+      <DependentUpon>GuidanceDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceDetailed.aspx.designer.cs">
+      <DependentUpon>GuidanceDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceExamineDetailed.aspx.cs">
+      <DependentUpon>GuidanceExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceExamineDetailed.aspx.designer.cs">
+      <DependentUpon>GuidanceExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceExamineManage.aspx.cs">
+      <DependentUpon>GuidanceExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceExamineManage.aspx.designer.cs">
+      <DependentUpon>GuidanceExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceManage.aspx.cs">
+      <DependentUpon>GuidanceManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceManage.aspx.designer.cs">
+      <DependentUpon>GuidanceManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidancePartnerManage.aspx.cs">
+      <DependentUpon>GuidancePartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidancePartnerManage.aspx.designer.cs">
+      <DependentUpon>GuidancePartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceProcess.aspx.cs">
+      <DependentUpon>GuidanceProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceProcess.aspx.designer.cs">
+      <DependentUpon>GuidanceProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceStatusManage.aspx.cs">
+      <DependentUpon>GuidanceStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceStatusManage.aspx.designer.cs">
+      <DependentUpon>GuidanceStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuidanceStatusModify.aspx.cs">
+      <DependentUpon>GuidanceStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidanceStatusModify.aspx.designer.cs">
+      <DependentUpon>GuidanceStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestAdd.aspx.cs">
+      <DependentUpon>HarvestAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestAdd.aspx.designer.cs">
+      <DependentUpon>HarvestAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestDetailed.aspx.cs">
+      <DependentUpon>HarvestDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestDetailed.aspx.designer.cs">
+      <DependentUpon>HarvestDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestExamineDetailed.aspx.cs">
+      <DependentUpon>HarvestExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestExamineDetailed.aspx.designer.cs">
+      <DependentUpon>HarvestExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestExamineManage.aspx.cs">
+      <DependentUpon>HarvestExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestExamineManage.aspx.designer.cs">
+      <DependentUpon>HarvestExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestManage.aspx.cs">
+      <DependentUpon>HarvestManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestManage.aspx.designer.cs">
+      <DependentUpon>HarvestManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestPartnerManage.aspx.cs">
+      <DependentUpon>HarvestPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestPartnerManage.aspx.designer.cs">
+      <DependentUpon>HarvestPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestProcess.aspx.cs">
+      <DependentUpon>HarvestProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestProcess.aspx.designer.cs">
+      <DependentUpon>HarvestProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestStatusManage.aspx.cs">
+      <DependentUpon>HarvestStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestStatusManage.aspx.designer.cs">
+      <DependentUpon>HarvestStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestStatusModify.aspx.cs">
+      <DependentUpon>HarvestStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestStatusModify.aspx.designer.cs">
+      <DependentUpon>HarvestStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imga_dyxl.aspx.cs">
+      <DependentUpon>imga_dyxl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imga_dyxl.aspx.designer.cs">
+      <DependentUpon>imga_dyxl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imgs.aspx.cs">
+      <DependentUpon>imgs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imgs.aspx.designer.cs">
+      <DependentUpon>imgs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstructionsForUse.aspx.cs">
+      <DependentUpon>InstructionsForUse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstructionsForUse.aspx.designer.cs">
+      <DependentUpon>InstructionsForUse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRow.cs" />
+    <Compile Include="JobAdd.aspx.cs">
+      <DependentUpon>JobAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobAdd.aspx.designer.cs">
+      <DependentUpon>JobAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobCertificatePhoto.aspx.cs">
+      <DependentUpon>JobCertificatePhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobCertificatePhoto.aspx.designer.cs">
+      <DependentUpon>JobCertificatePhoto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobManage.aspx.cs">
+      <DependentUpon>JobManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobManage.aspx.designer.cs">
+      <DependentUpon>JobManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobUpd.aspx.cs">
+      <DependentUpon>JobUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobUpd.aspx.designer.cs">
+      <DependentUpon>JobUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JournalManage.aspx.cs">
+      <DependentUpon>JournalManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JournalManage.aspx.designer.cs">
+      <DependentUpon>JournalManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Left.aspx.cs">
+      <DependentUpon>Left.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Left.aspx.designer.cs">
+      <DependentUpon>Left.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login1.aspx.cs">
+      <DependentUpon>Login1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login1.aspx.designer.cs">
+      <DependentUpon>Login1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalBasicAdd.aspx.cs">
+      <DependentUpon>LongCapitalBasicAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalBasicAdd.aspx.designer.cs">
+      <DependentUpon>LongCapitalBasicAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalBasicManage.aspx.cs">
+      <DependentUpon>LongCapitalBasicManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalBasicManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalBasicManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalBasicSituation.aspx.cs">
+      <DependentUpon>LongCapitalBasicSituation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalBasicSituation.aspx.designer.cs">
+      <DependentUpon>LongCapitalBasicSituation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalChangeAdd.aspx.cs">
+      <DependentUpon>LongCapitalChangeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalChangeAdd.aspx.designer.cs">
+      <DependentUpon>LongCapitalChangeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalChangeDetailed.aspx.cs">
+      <DependentUpon>LongCapitalChangeDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalChangeDetailed.aspx.designer.cs">
+      <DependentUpon>LongCapitalChangeDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalChangeExamineDetailed.aspx.cs">
+      <DependentUpon>LongCapitalChangeExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalChangeExamineDetailed.aspx.designer.cs">
+      <DependentUpon>LongCapitalChangeExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalChangeExamineManage.aspx.cs">
+      <DependentUpon>LongCapitalChangeExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalChangeExamineManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalChangeExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalChangeManage.aspx.cs">
+      <DependentUpon>LongCapitalChangeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalChangeManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalChangeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalChangeProcess.aspx.cs">
+      <DependentUpon>LongCapitalChangeProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalChangeProcess.aspx.designer.cs">
+      <DependentUpon>LongCapitalChangeProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalCloseAdd.aspx.cs">
+      <DependentUpon>LongCapitalCloseAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalCloseAdd.aspx.designer.cs">
+      <DependentUpon>LongCapitalCloseAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalCloseDetailed.aspx.cs">
+      <DependentUpon>LongCapitalCloseDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalCloseDetailed.aspx.designer.cs">
+      <DependentUpon>LongCapitalCloseDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalCloseExamineDetailed.aspx.cs">
+      <DependentUpon>LongCapitalCloseExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalCloseExamineDetailed.aspx.designer.cs">
+      <DependentUpon>LongCapitalCloseExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalCloseExamineManage.aspx.cs">
+      <DependentUpon>LongCapitalCloseExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalCloseExamineManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalCloseExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalCloseManage.aspx.cs">
+      <DependentUpon>LongCapitalCloseManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalCloseManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalCloseManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalCloseProcess.aspx.cs">
+      <DependentUpon>LongCapitalCloseProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalCloseProcess.aspx.designer.cs">
+      <DependentUpon>LongCapitalCloseProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalManage.aspx.cs">
+      <DependentUpon>LongCapitalManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlaceAdd.aspx.cs">
+      <DependentUpon>LongCapitalPlaceAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlaceAdd.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlaceAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlaceDetailed.aspx.cs">
+      <DependentUpon>LongCapitalPlaceDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlaceDetailed.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlaceDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlaceManage.aspx.cs">
+      <DependentUpon>LongCapitalPlaceManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlaceManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlaceManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlaceSituation.aspx.cs">
+      <DependentUpon>LongCapitalPlaceSituation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlaceSituation.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlaceSituation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlanAdd.aspx.cs">
+      <DependentUpon>LongCapitalPlanAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlanAdd.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlanAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlanDetailed.aspx.cs">
+      <DependentUpon>LongCapitalPlanDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlanDetailed.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlanDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlanExamineDetailed.aspx.cs">
+      <DependentUpon>LongCapitalPlanExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlanExamineDetailed.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlanExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlanExamineManage.aspx.cs">
+      <DependentUpon>LongCapitalPlanExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlanExamineManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlanExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlanManage.aspx.cs">
+      <DependentUpon>LongCapitalPlanManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlanManage.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlanManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongCapitalPlanProcess.aspx.cs">
+      <DependentUpon>LongCapitalPlanProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongCapitalPlanProcess.aspx.designer.cs">
+      <DependentUpon>LongCapitalPlanProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsDeclareAdd.aspx.cs">
+      <DependentUpon>LongProjectsDeclareAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsDeclareAdd.aspx.designer.cs">
+      <DependentUpon>LongProjectsDeclareAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsDeclareDetailed.aspx.cs">
+      <DependentUpon>LongProjectsDeclareDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsDeclareDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsDeclareDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsDeclareExamineDetailed.aspx.cs">
+      <DependentUpon>LongProjectsDeclareExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsDeclareExamineDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsDeclareExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsDeclareExamineManage.aspx.cs">
+      <DependentUpon>LongProjectsDeclareExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsDeclareExamineManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsDeclareExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsDeclareManage.aspx.cs">
+      <DependentUpon>LongProjectsDeclareManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsDeclareManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsDeclareManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsDeclareProcess.aspx.cs">
+      <DependentUpon>LongProjectsDeclareProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsDeclareProcess.aspx.designer.cs">
+      <DependentUpon>LongProjectsDeclareProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsEndAdd.aspx.cs">
+      <DependentUpon>LongProjectsEndAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsEndAdd.aspx.designer.cs">
+      <DependentUpon>LongProjectsEndAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsEndBranchDetailed.aspx.cs">
+      <DependentUpon>LongProjectsEndBranchDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsEndBranchDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsEndBranchDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsEndBranchManage.aspx.cs">
+      <DependentUpon>LongProjectsEndBranchManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsEndBranchManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsEndBranchManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsEndDetailed.aspx.cs">
+      <DependentUpon>LongProjectsEndDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsEndDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsEndDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsEndExamineDetailed.aspx.cs">
+      <DependentUpon>LongProjectsEndExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsEndExamineDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsEndExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsEndExamineManage.aspx.cs">
+      <DependentUpon>LongProjectsEndExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsEndExamineManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsEndExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsEndManage.aspx.cs">
+      <DependentUpon>LongProjectsEndManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsEndManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsEndManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsInspectAdd.aspx.cs">
+      <DependentUpon>LongProjectsInspectAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsInspectAdd.aspx.designer.cs">
+      <DependentUpon>LongProjectsInspectAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsInspectDetailed.aspx.cs">
+      <DependentUpon>LongProjectsInspectDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsInspectDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsInspectDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsInspectExamineDetailed.aspx.cs">
+      <DependentUpon>LongProjectsInspectExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsInspectExamineDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsInspectExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsInspectExamineManage.aspx.cs">
+      <DependentUpon>LongProjectsInspectExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsInspectExamineManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsInspectExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsInspectManage.aspx.cs">
+      <DependentUpon>LongProjectsInspectManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsInspectManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsInspectManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsManage.aspx.cs">
+      <DependentUpon>LongProjectsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsStandAdd.aspx.cs">
+      <DependentUpon>LongProjectsStandAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsStandAdd.aspx.designer.cs">
+      <DependentUpon>LongProjectsStandAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsStandBranchDetailed.aspx.cs">
+      <DependentUpon>LongProjectsStandBranchDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsStandBranchDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsStandBranchDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsStandBranchManage.aspx.cs">
+      <DependentUpon>LongProjectsStandBranchManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsStandBranchManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsStandBranchManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsStandDetailed.aspx.cs">
+      <DependentUpon>LongProjectsStandDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsStandDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsStandDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsStandExamineDetailed.aspx.cs">
+      <DependentUpon>LongProjectsStandExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsStandExamineDetailed.aspx.designer.cs">
+      <DependentUpon>LongProjectsStandExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsStandExamineManage.aspx.cs">
+      <DependentUpon>LongProjectsStandExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsStandExamineManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsStandExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsStandManage.aspx.cs">
+      <DependentUpon>LongProjectsStandManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsStandManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsStandManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsSumAdd.aspx.cs">
+      <DependentUpon>LongProjectsSumAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsSumAdd.aspx.designer.cs">
+      <DependentUpon>LongProjectsSumAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LongProjectsSumManage.aspx.cs">
+      <DependentUpon>LongProjectsSumManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LongProjectsSumManage.aspx.designer.cs">
+      <DependentUpon>LongProjectsSumManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelAdd.aspx.cs">
+      <DependentUpon>ModelAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModelAdd.aspx.designer.cs">
+      <DependentUpon>ModelAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelManage.aspx.cs">
+      <DependentUpon>ModelManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModelManage.aspx.designer.cs">
+      <DependentUpon>ModelManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelUpd.aspx.cs">
+      <DependentUpon>ModelUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModelUpd.aspx.designer.cs">
+      <DependentUpon>ModelUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyC_constructionManage.aspx.cs">
+      <DependentUpon>MyC_constructionManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyC_constructionManage.aspx.designer.cs">
+      <DependentUpon>MyC_constructionManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyC_winnersManage.aspx.cs">
+      <DependentUpon>MyC_winnersManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyC_winnersManage.aspx.designer.cs">
+      <DependentUpon>MyC_winnersManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyGuidanceManage.aspx.cs">
+      <DependentUpon>MyGuidanceManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyGuidanceManage.aspx.designer.cs">
+      <DependentUpon>MyGuidanceManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyHarvestManage.aspx.cs">
+      <DependentUpon>MyHarvestManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyHarvestManage.aspx.designer.cs">
+      <DependentUpon>MyHarvestManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPaperManage.aspx.cs">
+      <DependentUpon>MyPaperManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyPaperManage.aspx.designer.cs">
+      <DependentUpon>MyPaperManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPatentManage.aspx.cs">
+      <DependentUpon>MyPatentManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyPatentManage.aspx.designer.cs">
+      <DependentUpon>MyPatentManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyProjectsApprovalManage.aspx.cs">
+      <DependentUpon>MyProjectsApprovalManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProjectsApprovalManage.aspx.designer.cs">
+      <DependentUpon>MyProjectsApprovalManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyProjectsEndManage.aspx.cs">
+      <DependentUpon>MyProjectsEndManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProjectsEndManage.aspx.designer.cs">
+      <DependentUpon>MyProjectsEndManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyP_constructionManage.aspx.cs">
+      <DependentUpon>MyP_constructionManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyP_constructionManage.aspx.designer.cs">
+      <DependentUpon>MyP_constructionManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyResultsManage.aspx.cs">
+      <DependentUpon>MyResultsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyResultsManage.aspx.designer.cs">
+      <DependentUpon>MyResultsManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyShortProjectsApprovalManage.aspx.cs">
+      <DependentUpon>MyShortProjectsApprovalManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyShortProjectsApprovalManage.aspx.designer.cs">
+      <DependentUpon>MyShortProjectsApprovalManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyShortProjectsEndManage.aspx.cs">
+      <DependentUpon>MyShortProjectsEndManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyShortProjectsEndManage.aspx.designer.cs">
+      <DependentUpon>MyShortProjectsEndManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyTeachToTeachingManage.aspx.cs">
+      <DependentUpon>MyTeachToTeachingManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyTeachToTeachingManage.aspx.designer.cs">
+      <DependentUpon>MyTeachToTeachingManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MySpecialManage.aspx.cs">
+      <DependentUpon>MySpecialManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MySpecialManage.aspx.designer.cs">
+      <DependentUpon>MySpecialManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyTeachingManage.aspx.cs">
+      <DependentUpon>MyTeachingManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyTeachingManage.aspx.designer.cs">
+      <DependentUpon>MyTeachingManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyTeaching_TeamManage.aspx.cs">
+      <DependentUpon>MyTeaching_TeamManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyTeaching_TeamManage.aspx.designer.cs">
+      <DependentUpon>MyTeaching_TeamManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyT_TeachingManage.aspx.cs">
+      <DependentUpon>MyT_TeachingManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyT_TeachingManage.aspx.designer.cs">
+      <DependentUpon>MyT_TeachingManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyWinningManage.aspx.cs">
+      <DependentUpon>MyWinningManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyWinningManage.aspx.designer.cs">
+      <DependentUpon>MyWinningManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkLoadProjectsManage.aspx.cs">
+      <DependentUpon>MyWorkLoadProjectsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyWorkLoadProjectsManage.aspx.designer.cs">
+      <DependentUpon>MyWorkLoadProjectsManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NationAdd.aspx.cs">
+      <DependentUpon>NationAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NationAdd.aspx.designer.cs">
+      <DependentUpon>NationAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NationManage.aspx.cs">
+      <DependentUpon>NationManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NationManage.aspx.designer.cs">
+      <DependentUpon>NationManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NationUpd.aspx.cs">
+      <DependentUpon>NationUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NationUpd.aspx.designer.cs">
+      <DependentUpon>NationUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OldView.aspx.cs">
+      <DependentUpon>OldView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OldView.aspx.designer.cs">
+      <DependentUpon>OldView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperAdd.aspx.cs">
+      <DependentUpon>PaperAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperAdd.aspx.designer.cs">
+      <DependentUpon>PaperAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperDetailed.aspx.cs">
+      <DependentUpon>PaperDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperDetailed.aspx.designer.cs">
+      <DependentUpon>PaperDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperExamineDetailed.aspx.cs">
+      <DependentUpon>PaperExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperExamineDetailed.aspx.designer.cs">
+      <DependentUpon>PaperExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperExamineManage.aspx.cs">
+      <DependentUpon>PaperExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperExamineManage.aspx.designer.cs">
+      <DependentUpon>PaperExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperManage.aspx.cs">
+      <DependentUpon>PaperManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperManage.aspx.designer.cs">
+      <DependentUpon>PaperManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperPartnerManage.aspx.cs">
+      <DependentUpon>PaperPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperPartnerManage.aspx.designer.cs">
+      <DependentUpon>PaperPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperProcess.aspx.cs">
+      <DependentUpon>PaperProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperProcess.aspx.designer.cs">
+      <DependentUpon>PaperProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperStatusManage.aspx.cs">
+      <DependentUpon>PaperStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperStatusManage.aspx.designer.cs">
+      <DependentUpon>PaperStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperStatusModify.aspx.cs">
+      <DependentUpon>PaperStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperStatusModify.aspx.designer.cs">
+      <DependentUpon>PaperStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PastAwardsPhoto.aspx.cs">
+      <DependentUpon>PastAwardsPhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PastAwardsPhoto.aspx.designer.cs">
+      <DependentUpon>PastAwardsPhoto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentAdd.aspx.cs">
+      <DependentUpon>PatentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentAdd.aspx.designer.cs">
+      <DependentUpon>PatentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentDetailed.aspx.cs">
+      <DependentUpon>PatentDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentDetailed.aspx.designer.cs">
+      <DependentUpon>PatentDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentExamineDetailed.aspx.cs">
+      <DependentUpon>PatentExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentExamineDetailed.aspx.designer.cs">
+      <DependentUpon>PatentExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentExamineManage.aspx.cs">
+      <DependentUpon>PatentExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentExamineManage.aspx.designer.cs">
+      <DependentUpon>PatentExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentManage.aspx.cs">
+      <DependentUpon>PatentManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentManage.aspx.designer.cs">
+      <DependentUpon>PatentManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentPartnerManage.aspx.cs">
+      <DependentUpon>PatentPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentPartnerManage.aspx.designer.cs">
+      <DependentUpon>PatentPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentProcess.aspx.cs">
+      <DependentUpon>PatentProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentProcess.aspx.designer.cs">
+      <DependentUpon>PatentProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentStatusManage.aspx.cs">
+      <DependentUpon>PatentStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentStatusManage.aspx.designer.cs">
+      <DependentUpon>PatentStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatentStatusModify.aspx.cs">
+      <DependentUpon>PatentStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatentStatusModify.aspx.designer.cs">
+      <DependentUpon>PatentStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo.aspx.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo.aspx.designer.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo_dyxl.aspx.cs">
+      <DependentUpon>Photo_dyxl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo_dyxl.aspx.designer.cs">
+      <DependentUpon>Photo_dyxl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliticalAdd.aspx.cs">
+      <DependentUpon>PoliticalAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliticalAdd.aspx.designer.cs">
+      <DependentUpon>PoliticalAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliticalManage.aspx.cs">
+      <DependentUpon>PoliticalManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliticalManage.aspx.designer.cs">
+      <DependentUpon>PoliticalManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliticalUpd.aspx.cs">
+      <DependentUpon>PoliticalUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliticalUpd.aspx.designer.cs">
+      <DependentUpon>PoliticalUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostAdd.aspx.cs">
+      <DependentUpon>PostAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostAdd.aspx.designer.cs">
+      <DependentUpon>PostAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostManage.aspx.cs">
+      <DependentUpon>PostManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostManage.aspx.designer.cs">
+      <DependentUpon>PostManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostUpd.aspx.cs">
+      <DependentUpon>PostUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostUpd.aspx.designer.cs">
+      <DependentUpon>PostUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsFromAdd.aspx.cs">
+      <DependentUpon>ProjectsFromAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsFromAdd.aspx.designer.cs">
+      <DependentUpon>ProjectsFromAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsFromManage.aspx.cs">
+      <DependentUpon>ProjectsFromManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsFromManage.aspx.designer.cs">
+      <DependentUpon>ProjectsFromManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsFromUpd.aspx.cs">
+      <DependentUpon>ProjectsFromUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsFromUpd.aspx.designer.cs">
+      <DependentUpon>ProjectsFromUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsLevelAdd.aspx.cs">
+      <DependentUpon>ProjectsLevelAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsLevelAdd.aspx.designer.cs">
+      <DependentUpon>ProjectsLevelAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsLevelManage.aspx.cs">
+      <DependentUpon>ProjectsLevelManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsLevelManage.aspx.designer.cs">
+      <DependentUpon>ProjectsLevelManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsLevelUpd.aspx.cs">
+      <DependentUpon>ProjectsLevelUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsLevelUpd.aspx.designer.cs">
+      <DependentUpon>ProjectsLevelUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsSubjectAdd.aspx.cs">
+      <DependentUpon>ProjectsSubjectAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsSubjectAdd.aspx.designer.cs">
+      <DependentUpon>ProjectsSubjectAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsSubjectManage.aspx.cs">
+      <DependentUpon>ProjectsSubjectManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsSubjectManage.aspx.designer.cs">
+      <DependentUpon>ProjectsSubjectManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsSubjectUpd.aspx.cs">
+      <DependentUpon>ProjectsSubjectUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsSubjectUpd.aspx.designer.cs">
+      <DependentUpon>ProjectsSubjectUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsTemplateAdd.aspx.cs">
+      <DependentUpon>ProjectsTemplateAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsTemplateAdd.aspx.designer.cs">
+      <DependentUpon>ProjectsTemplateAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsTemplateManage.aspx.cs">
+      <DependentUpon>ProjectsTemplateManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectsTemplateManage.aspx.designer.cs">
+      <DependentUpon>ProjectsTemplateManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="P_constructionAdd.aspx.cs">
+      <DependentUpon>P_constructionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionAdd.aspx.designer.cs">
+      <DependentUpon>P_constructionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionDetailed.aspx.cs">
+      <DependentUpon>P_constructionDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionDetailed.aspx.designer.cs">
+      <DependentUpon>P_constructionDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionExamineDetailed.aspx.cs">
+      <DependentUpon>P_constructionExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionExamineDetailed.aspx.designer.cs">
+      <DependentUpon>P_constructionExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionExamineManage.aspx.cs">
+      <DependentUpon>P_constructionExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionExamineManage.aspx.designer.cs">
+      <DependentUpon>P_constructionExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionManage.aspx.cs">
+      <DependentUpon>P_constructionManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionManage.aspx.designer.cs">
+      <DependentUpon>P_constructionManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionPartnerManage.aspx.cs">
+      <DependentUpon>P_constructionPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionPartnerManage.aspx.designer.cs">
+      <DependentUpon>P_constructionPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionProcess.aspx.cs">
+      <DependentUpon>P_constructionProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionProcess.aspx.designer.cs">
+      <DependentUpon>P_constructionProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionStatusManage.aspx.cs">
+      <DependentUpon>P_constructionStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionStatusManage.aspx.designer.cs">
+      <DependentUpon>P_constructionStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P_constructionStatusModify.aspx.cs">
+      <DependentUpon>P_constructionStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P_constructionStatusModify.aspx.designer.cs">
+      <DependentUpon>P_constructionStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RankAdd.aspx.cs">
+      <DependentUpon>RankAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RankAdd.aspx.designer.cs">
+      <DependentUpon>RankAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RankManage.aspx.cs">
+      <DependentUpon>RankManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RankManage.aspx.designer.cs">
+      <DependentUpon>RankManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RankUpd.aspx.cs">
+      <DependentUpon>RankUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RankUpd.aspx.designer.cs">
+      <DependentUpon>RankUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rank_User.aspx.cs">
+      <DependentUpon>Rank_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rank_User.aspx.designer.cs">
+      <DependentUpon>Rank_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsAdd.aspx.cs">
+      <DependentUpon>ResultsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsAdd.aspx.designer.cs">
+      <DependentUpon>ResultsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsDetailed.aspx.cs">
+      <DependentUpon>ResultsDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsDetailed.aspx.designer.cs">
+      <DependentUpon>ResultsDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsExamineDetailed.aspx.cs">
+      <DependentUpon>ResultsExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsExamineDetailed.aspx.designer.cs">
+      <DependentUpon>ResultsExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsExamineManage.aspx.cs">
+      <DependentUpon>ResultsExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsExamineManage.aspx.designer.cs">
+      <DependentUpon>ResultsExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsManage.aspx.cs">
+      <DependentUpon>ResultsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsManage.aspx.designer.cs">
+      <DependentUpon>ResultsManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsPartnerManage.aspx.cs">
+      <DependentUpon>ResultsPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsPartnerManage.aspx.designer.cs">
+      <DependentUpon>ResultsPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsProcess.aspx.cs">
+      <DependentUpon>ResultsProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsProcess.aspx.designer.cs">
+      <DependentUpon>ResultsProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsStatusManage.aspx.cs">
+      <DependentUpon>ResultsStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsStatusManage.aspx.designer.cs">
+      <DependentUpon>ResultsStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsStatusModify.aspx.cs">
+      <DependentUpon>ResultsStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsStatusModify.aspx.designer.cs">
+      <DependentUpon>ResultsStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Right.aspx.cs">
+      <DependentUpon>Right.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Right.aspx.designer.cs">
+      <DependentUpon>Right.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleAdd.aspx.cs">
+      <DependentUpon>RoleAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleAdd.aspx.designer.cs">
+      <DependentUpon>RoleAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManage.aspx.cs">
+      <DependentUpon>RoleManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleManage.aspx.designer.cs">
+      <DependentUpon>RoleManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleUpd.aspx.cs">
+      <DependentUpon>RoleUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleUpd.aspx.designer.cs">
+      <DependentUpon>RoleUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalBasicAdd.aspx.cs">
+      <DependentUpon>ShortCapitalBasicAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalBasicAdd.aspx.designer.cs">
+      <DependentUpon>ShortCapitalBasicAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalBasicManage.aspx.cs">
+      <DependentUpon>ShortCapitalBasicManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalBasicManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalBasicManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalBasicSituation.aspx.cs">
+      <DependentUpon>ShortCapitalBasicSituation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalBasicSituation.aspx.designer.cs">
+      <DependentUpon>ShortCapitalBasicSituation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalChangeAdd.aspx.cs">
+      <DependentUpon>ShortCapitalChangeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalChangeAdd.aspx.designer.cs">
+      <DependentUpon>ShortCapitalChangeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalChangeDetailed.aspx.cs">
+      <DependentUpon>ShortCapitalChangeDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalChangeDetailed.aspx.designer.cs">
+      <DependentUpon>ShortCapitalChangeDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalChangeExamineDetailed.aspx.cs">
+      <DependentUpon>ShortCapitalChangeExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalChangeExamineDetailed.aspx.designer.cs">
+      <DependentUpon>ShortCapitalChangeExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalChangeExamineManage.aspx.cs">
+      <DependentUpon>ShortCapitalChangeExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalChangeExamineManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalChangeExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalChangeManage.aspx.cs">
+      <DependentUpon>ShortCapitalChangeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalChangeManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalChangeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalChangeProcess.aspx.cs">
+      <DependentUpon>ShortCapitalChangeProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalChangeProcess.aspx.designer.cs">
+      <DependentUpon>ShortCapitalChangeProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalCloseAdd.aspx.cs">
+      <DependentUpon>ShortCapitalCloseAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalCloseAdd.aspx.designer.cs">
+      <DependentUpon>ShortCapitalCloseAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalCloseDetailed.aspx.cs">
+      <DependentUpon>ShortCapitalCloseDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalCloseDetailed.aspx.designer.cs">
+      <DependentUpon>ShortCapitalCloseDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalCloseExamineDetailed.aspx.cs">
+      <DependentUpon>ShortCapitalCloseExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalCloseExamineDetailed.aspx.designer.cs">
+      <DependentUpon>ShortCapitalCloseExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalCloseExamineManage.aspx.cs">
+      <DependentUpon>ShortCapitalCloseExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalCloseExamineManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalCloseExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalCloseManage.aspx.cs">
+      <DependentUpon>ShortCapitalCloseManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalCloseManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalCloseManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalCloseProcess.aspx.cs">
+      <DependentUpon>ShortCapitalCloseProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalCloseProcess.aspx.designer.cs">
+      <DependentUpon>ShortCapitalCloseProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalManage.aspx.cs">
+      <DependentUpon>ShortCapitalManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceAdd.aspx.cs">
+      <DependentUpon>ShortCapitalPlaceAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceAdd.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlaceAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceDetailed.aspx.cs">
+      <DependentUpon>ShortCapitalPlaceDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceDetailed.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlaceDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceManage.aspx.cs">
+      <DependentUpon>ShortCapitalPlaceManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlaceManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceSituation.aspx.cs">
+      <DependentUpon>ShortCapitalPlaceSituation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlaceSituation.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlaceSituation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlanAdd.aspx.cs">
+      <DependentUpon>ShortCapitalPlanAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlanAdd.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlanAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlanDetailed.aspx.cs">
+      <DependentUpon>ShortCapitalPlanDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlanDetailed.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlanDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlanExamineDetailed.aspx.cs">
+      <DependentUpon>ShortCapitalPlanExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlanExamineDetailed.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlanExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlanExamineManage.aspx.cs">
+      <DependentUpon>ShortCapitalPlanExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlanExamineManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlanExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlanManage.aspx.cs">
+      <DependentUpon>ShortCapitalPlanManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlanManage.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlanManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCapitalPlanProcess.aspx.cs">
+      <DependentUpon>ShortCapitalPlanProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortCapitalPlanProcess.aspx.designer.cs">
+      <DependentUpon>ShortCapitalPlanProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsEndAdd.aspx.cs">
+      <DependentUpon>ShortProjectsEndAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsEndAdd.aspx.designer.cs">
+      <DependentUpon>ShortProjectsEndAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsEndDetailed.aspx.cs">
+      <DependentUpon>ShortProjectsEndDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsEndDetailed.aspx.designer.cs">
+      <DependentUpon>ShortProjectsEndDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsEndExamineDetailed.aspx.cs">
+      <DependentUpon>ShortProjectsEndExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsEndExamineDetailed.aspx.designer.cs">
+      <DependentUpon>ShortProjectsEndExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsEndExamineManage.aspx.cs">
+      <DependentUpon>ShortProjectsEndExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsEndExamineManage.aspx.designer.cs">
+      <DependentUpon>ShortProjectsEndExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsEndManage.aspx.cs">
+      <DependentUpon>ShortProjectsEndManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsEndManage.aspx.designer.cs">
+      <DependentUpon>ShortProjectsEndManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsManage.aspx.cs">
+      <DependentUpon>ShortProjectsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsManage.aspx.designer.cs">
+      <DependentUpon>ShortProjectsManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsProcess.aspx.cs">
+      <DependentUpon>ShortProjectsProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsProcess.aspx.designer.cs">
+      <DependentUpon>ShortProjectsProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsStandAdd.aspx.cs">
+      <DependentUpon>ShortProjectsStandAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsStandAdd.aspx.designer.cs">
+      <DependentUpon>ShortProjectsStandAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsStandDetailed.aspx.cs">
+      <DependentUpon>ShortProjectsStandDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsStandDetailed.aspx.designer.cs">
+      <DependentUpon>ShortProjectsStandDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsStandExamineDetailed.aspx.cs">
+      <DependentUpon>ShortProjectsStandExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsStandExamineDetailed.aspx.designer.cs">
+      <DependentUpon>ShortProjectsStandExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsStandExamineManage.aspx.cs">
+      <DependentUpon>ShortProjectsStandExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsStandExamineManage.aspx.designer.cs">
+      <DependentUpon>ShortProjectsStandExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortProjectsStandManage.aspx.cs">
+      <DependentUpon>ShortProjectsStandManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortProjectsStandManage.aspx.designer.cs">
+      <DependentUpon>ShortProjectsStandManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudyTrainPhoto.aspx.cs">
+      <DependentUpon>StudyTrainPhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudyTrainPhoto.aspx.designer.cs">
+      <DependentUpon>StudyTrainPhoto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingAdd.aspx.cs">
+      <DependentUpon>TeachToTeachingAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingAdd.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialAdd.aspx.cs">
+      <DependentUpon>SpecialAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialAdd.aspx.designer.cs">
+      <DependentUpon>SpecialAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingDetailed.aspx.cs">
+      <DependentUpon>TeachToTeachingDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingDetailed.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialDetailed.aspx.cs">
+      <DependentUpon>SpecialDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialDetailed.aspx.designer.cs">
+      <DependentUpon>SpecialDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingExamineDetailed.aspx.cs">
+      <DependentUpon>TeachToTeachingExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingExamineDetailed.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialExamineDetailed.aspx.cs">
+      <DependentUpon>SpecialExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialExamineDetailed.aspx.designer.cs">
+      <DependentUpon>SpecialExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingExamineManage.aspx.cs">
+      <DependentUpon>TeachToTeachingExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingExamineManage.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialExamineManage.aspx.cs">
+      <DependentUpon>SpecialExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialExamineManage.aspx.designer.cs">
+      <DependentUpon>SpecialExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingManage.aspx.cs">
+      <DependentUpon>TeachToTeachingManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingManage.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialManage.aspx.cs">
+      <DependentUpon>SpecialManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialManage.aspx.designer.cs">
+      <DependentUpon>SpecialManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingProcess.aspx.cs">
+      <DependentUpon>TeachToTeachingProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingProcess.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialProcess.aspx.cs">
+      <DependentUpon>SpecialProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialProcess.aspx.designer.cs">
+      <DependentUpon>SpecialProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingStatusManage.aspx.cs">
+      <DependentUpon>TeachToTeachingStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingStatusManage.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialStatusManage.aspx.cs">
+      <DependentUpon>SpecialStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialStatusManage.aspx.designer.cs">
+      <DependentUpon>SpecialStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachToTeachingStatusModify.aspx.cs">
+      <DependentUpon>TeachToTeachingStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachToTeachingStatusModify.aspx.designer.cs">
+      <DependentUpon>TeachToTeachingStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialStatusModify.aspx.cs">
+      <DependentUpon>SpecialStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecialStatusModify.aspx.designer.cs">
+      <DependentUpon>SpecialStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusAdd.aspx.cs">
+      <DependentUpon>StatusAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatusAdd.aspx.designer.cs">
+      <DependentUpon>StatusAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusManage.aspx.cs">
+      <DependentUpon>StatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatusManage.aspx.designer.cs">
+      <DependentUpon>StatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusUpd.aspx.cs">
+      <DependentUpon>StatusUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatusUpd.aspx.designer.cs">
+      <DependentUpon>StatusUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingAdd.aspx.cs">
+      <DependentUpon>TeachingAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingAdd.aspx.designer.cs">
+      <DependentUpon>TeachingAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingDetailed.aspx.cs">
+      <DependentUpon>TeachingDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingDetailed.aspx.designer.cs">
+      <DependentUpon>TeachingDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingExamineDetailed.aspx.cs">
+      <DependentUpon>TeachingExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingExamineDetailed.aspx.designer.cs">
+      <DependentUpon>TeachingExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingExamineManage.aspx.cs">
+      <DependentUpon>TeachingExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingExamineManage.aspx.designer.cs">
+      <DependentUpon>TeachingExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingManage.aspx.cs">
+      <DependentUpon>TeachingManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingManage.aspx.designer.cs">
+      <DependentUpon>TeachingManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingPartnerManage.aspx.cs">
+      <DependentUpon>TeachingPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingPartnerManage.aspx.designer.cs">
+      <DependentUpon>TeachingPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingProcess.aspx.cs">
+      <DependentUpon>TeachingProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingProcess.aspx.designer.cs">
+      <DependentUpon>TeachingProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingStatusManage.aspx.cs">
+      <DependentUpon>TeachingStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingStatusManage.aspx.designer.cs">
+      <DependentUpon>TeachingStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachingStatusModify.aspx.cs">
+      <DependentUpon>TeachingStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachingStatusModify.aspx.designer.cs">
+      <DependentUpon>TeachingStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamAdd.aspx.cs">
+      <DependentUpon>Teaching_TeamAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamAdd.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamDetailed.aspx.cs">
+      <DependentUpon>Teaching_TeamDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamDetailed.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamExamineDetailed.aspx.cs">
+      <DependentUpon>Teaching_TeamExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamExamineDetailed.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamExamineManage.aspx.cs">
+      <DependentUpon>Teaching_TeamExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamExamineManage.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamManage.aspx.cs">
+      <DependentUpon>Teaching_TeamManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamManage.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamPartnerManage.aspx.cs">
+      <DependentUpon>Teaching_TeamPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamPartnerManage.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamProcess.aspx.cs">
+      <DependentUpon>Teaching_TeamProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamProcess.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamStatusManage.aspx.cs">
+      <DependentUpon>Teaching_TeamStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamStatusManage.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teaching_TeamStatusModify.aspx.cs">
+      <DependentUpon>Teaching_TeamStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teaching_TeamStatusModify.aspx.designer.cs">
+      <DependentUpon>Teaching_TeamStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_AssessDetailed.aspx.cs">
+      <DependentUpon>T_AssessDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_AssessDetailed.aspx.designer.cs">
+      <DependentUpon>T_AssessDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_AssessValueReserve.aspx.cs">
+      <DependentUpon>T_AssessValueReserve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_AssessValueReserve.aspx.designer.cs">
+      <DependentUpon>T_AssessValueReserve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_AssessYear.aspx.cs">
+      <DependentUpon>T_AssessYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_AssessYear.aspx.designer.cs">
+      <DependentUpon>T_AssessYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_DepView.aspx.cs">
+      <DependentUpon>T_DepView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_DepView.aspx.designer.cs">
+      <DependentUpon>T_DepView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingAdd.aspx.cs">
+      <DependentUpon>T_TeachingAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingAdd.aspx.designer.cs">
+      <DependentUpon>T_TeachingAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingDetailed.aspx.cs">
+      <DependentUpon>T_TeachingDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingDetailed.aspx.designer.cs">
+      <DependentUpon>T_TeachingDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingExamineDetailed.aspx.cs">
+      <DependentUpon>T_TeachingExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingExamineDetailed.aspx.designer.cs">
+      <DependentUpon>T_TeachingExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingExamineManage.aspx.cs">
+      <DependentUpon>T_TeachingExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingExamineManage.aspx.designer.cs">
+      <DependentUpon>T_TeachingExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingManage.aspx.cs">
+      <DependentUpon>T_TeachingManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingManage.aspx.designer.cs">
+      <DependentUpon>T_TeachingManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingProcess.aspx.cs">
+      <DependentUpon>T_TeachingProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingProcess.aspx.designer.cs">
+      <DependentUpon>T_TeachingProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingStatusManage.aspx.cs">
+      <DependentUpon>T_TeachingStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingStatusManage.aspx.designer.cs">
+      <DependentUpon>T_TeachingStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_TeachingStatusModify.aspx.cs">
+      <DependentUpon>T_TeachingStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_TeachingStatusModify.aspx.designer.cs">
+      <DependentUpon>T_TeachingStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T_UserWork.aspx.cs">
+      <DependentUpon>T_UserWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T_UserWork.aspx.designer.cs">
+      <DependentUpon>T_UserWork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseJobPostAdd.aspx.cs">
+      <DependentUpon>UseJobPostAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseJobPostAdd.aspx.designer.cs">
+      <DependentUpon>UseJobPostAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseJobPostManage.aspx.cs">
+      <DependentUpon>UseJobPostManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseJobPostManage.aspx.designer.cs">
+      <DependentUpon>UseJobPostManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseJobPostUpd.aspx.cs">
+      <DependentUpon>UseJobPostUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseJobPostUpd.aspx.designer.cs">
+      <DependentUpon>UseJobPostUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseOfficeAdd.aspx.cs">
+      <DependentUpon>UseOfficeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseOfficeAdd.aspx.designer.cs">
+      <DependentUpon>UseOfficeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseOfficeManage.aspx.cs">
+      <DependentUpon>UseOfficeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseOfficeManage.aspx.designer.cs">
+      <DependentUpon>UseOfficeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseOfficeUpd.aspx.cs">
+      <DependentUpon>UseOfficeUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseOfficeUpd.aspx.designer.cs">
+      <DependentUpon>UseOfficeUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsePerAppMan.aspx.cs">
+      <DependentUpon>UsePerAppMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsePerAppMan.aspx.designer.cs">
+      <DependentUpon>UsePerAppMan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsePhoto.aspx.cs">
+      <DependentUpon>UsePhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsePhoto.aspx.designer.cs">
+      <DependentUpon>UsePhoto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEmail.aspx.cs">
+      <DependentUpon>UserEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEmail.aspx.designer.cs">
+      <DependentUpon>UserEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseRemunerationAdd.aspx.cs">
+      <DependentUpon>UseRemunerationAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseRemunerationAdd.aspx.designer.cs">
+      <DependentUpon>UseRemunerationAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseRemunerationManage.aspx.cs">
+      <DependentUpon>UseRemunerationManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseRemunerationManage.aspx.designer.cs">
+      <DependentUpon>UseRemunerationManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseRemunerationUpd.aspx.cs">
+      <DependentUpon>UseRemunerationUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseRemunerationUpd.aspx.designer.cs">
+      <DependentUpon>UseRemunerationUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEnable.aspx.cs">
+      <DependentUpon>UserEnable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEnable.aspx.designer.cs">
+      <DependentUpon>UserEnable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoAdd.aspx.cs">
+      <DependentUpon>UserInfoAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserInfoAdd.aspx.designer.cs">
+      <DependentUpon>UserInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoManage.aspx.cs">
+      <DependentUpon>UserInfoManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserInfoManage.aspx.designer.cs">
+      <DependentUpon>UserInfoManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoPwd.aspx.cs">
+      <DependentUpon>UserInfoPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserInfoPwd.aspx.designer.cs">
+      <DependentUpon>UserInfoPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoUpd.aspx.cs">
+      <DependentUpon>UserInfoUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserInfoUpd.aspx.designer.cs">
+      <DependentUpon>UserInfoUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserMyPwd.aspx.cs">
+      <DependentUpon>UserMyPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserMyPwd.aspx.designer.cs">
+      <DependentUpon>UserMyPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPhone.aspx.cs">
+      <DependentUpon>UserPhone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPhone.aspx.designer.cs">
+      <DependentUpon>UserPhone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRankManage.aspx.cs">
+      <DependentUpon>UserRankManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRankManage.aspx.designer.cs">
+      <DependentUpon>UserRankManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.aspx.cs">
+      <DependentUpon>UserRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRole.aspx.designer.cs">
+      <DependentUpon>UserRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserWork.aspx.cs">
+      <DependentUpon>UserWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserWork.aspx.designer.cs">
+      <DependentUpon>UserWork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningAdd.aspx.cs">
+      <DependentUpon>WinningAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningAdd.aspx.designer.cs">
+      <DependentUpon>WinningAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningDetailed.aspx.cs">
+      <DependentUpon>WinningDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningDetailed.aspx.designer.cs">
+      <DependentUpon>WinningDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningExamineDetailed.aspx.cs">
+      <DependentUpon>WinningExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningExamineDetailed.aspx.designer.cs">
+      <DependentUpon>WinningExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningExamineManage.aspx.cs">
+      <DependentUpon>WinningExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningExamineManage.aspx.designer.cs">
+      <DependentUpon>WinningExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningManage.aspx.cs">
+      <DependentUpon>WinningManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningManage.aspx.designer.cs">
+      <DependentUpon>WinningManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningPartnerManage.aspx.cs">
+      <DependentUpon>WinningPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningPartnerManage.aspx.designer.cs">
+      <DependentUpon>WinningPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningProcess.aspx.cs">
+      <DependentUpon>WinningProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningProcess.aspx.designer.cs">
+      <DependentUpon>WinningProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningStatusManage.aspx.cs">
+      <DependentUpon>WinningStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningStatusManage.aspx.designer.cs">
+      <DependentUpon>WinningStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinningStatusModify.aspx.cs">
+      <DependentUpon>WinningStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinningStatusModify.aspx.designer.cs">
+      <DependentUpon>WinningStatusModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsAdd.aspx.cs">
+      <DependentUpon>WorkLoadProjectsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsAdd.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsDetailed.aspx.cs">
+      <DependentUpon>WorkLoadProjectsDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsDetailed.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsExamineDetailed.aspx.cs">
+      <DependentUpon>WorkLoadProjectsExamineDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsExamineDetailed.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsExamineDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsExamineManage.aspx.cs">
+      <DependentUpon>WorkLoadProjectsExamineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsExamineManage.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsExamineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsManage.aspx.cs">
+      <DependentUpon>WorkLoadProjectsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsManage.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsPartnerManage.aspx.cs">
+      <DependentUpon>WorkLoadProjectsPartnerManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsPartnerManage.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsPartnerManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsProcess.aspx.cs">
+      <DependentUpon>WorkLoadProjectsProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsProcess.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsStatusManage.aspx.cs">
+      <DependentUpon>WorkLoadProjectsStatusManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsStatusManage.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsStatusManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLoadProjectsStatusModify.aspx.cs">
+      <DependentUpon>WorkLoadProjectsStatusModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkLoadProjectsStatusModify.aspx.designer.cs">
+      <DependentUpon>WorkLoadProjectsStatusModify.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScientManage_Data\ScientManage_Data.csproj">
+      <Project>{bc3ed7a0-2637-416d-9e0e-1a3ed1f93408}</Project>
+      <Name>ScientManage_Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15303</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15304/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

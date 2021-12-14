@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScientManage_Data", "ScientManage_Data\ScientManage_Data.csproj", "{BC3ED7A0-2637-416D-9E0E-1A3ED1F93408}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScientManage_Web", "ScientManage_Web\ScientManage_Web.csproj", "{32EC6555-4632-4F1F-B7BF-DA095CB15F54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC3ED7A0-2637-416D-9E0E-1A3ED1F93408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3ED7A0-2637-416D-9E0E-1A3ED1F93408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3ED7A0-2637-416D-9E0E-1A3ED1F93408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3ED7A0-2637-416D-9E0E-1A3ED1F93408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32EC6555-4632-4F1F-B7BF-DA095CB15F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32EC6555-4632-4F1F-B7BF-DA095CB15F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32EC6555-4632-4F1F-B7BF-DA095CB15F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32EC6555-4632-4F1F-B7BF-DA095CB15F54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
